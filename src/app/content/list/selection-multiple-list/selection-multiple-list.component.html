@@ -1,0 +1,7 @@
+<mat-selection-list [(ngModel)]="selected"  [multiple]="true">
+  <mat-list-option *ngFor="let option of options" [value]="option">
+    {{option}}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>Selected Class: {{ selected }}</p>
