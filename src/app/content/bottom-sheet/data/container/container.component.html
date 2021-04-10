@@ -1,0 +1,22 @@
+<h4>Bottom Sheet with data</h4>
+<p>Test the bottom sheet and the parent component separately</p>
+
+<mat-card>
+  <mat-card-content>
+    <app-item-template htmlFile="data-bottom-sheet.component.html"
+                   tsFile="data-bottom-sheet.component.ts"
+                   specFile="data-bottom-sheet.component.spec.ts">
+      <app-data-bottom-sheet></app-data-bottom-sheet>
+    </app-item-template>
+  </mat-card-content>
+</mat-card>
+<mat-divider></mat-divider>
+<mat-card>
+  <mat-card-content>
+    <app-item-template htmlFile="data-example-sheet.component.html"
+                       tsFile="data-example-sheet.component.ts"
+                       specFile="data-example-sheet.component.spec.ts">
+       Navigate to other tabs to see bottom sheet implementation
+    </app-item-template>
+  </mat-card-content>
+</mat-card>

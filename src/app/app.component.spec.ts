@@ -49,8 +49,8 @@ describe('AppComponent', () => {
 
   it('should display sub-categories links', () => {
     const links = ngMocks.findAll('a.sub-item');
-    expect(links.length).toEqual(5);
-    expect(ngMocks.input(links[0], 'routerLink')).toEqual([ RouteNames.List, RouteNames.ListBase ]);
-    expect(ngMocks.formatText(links[0])).toContain('Base List');
+    expect(links.length).toEqual(7);
+    expect(ngMocks.input(links[0], 'routerLink')).toEqual([ RouteNames.BottomSheet, RouteNames.BottomSheetBase ]);
+    expect(ngMocks.formatText(links[0])).toContain('Base Bottom Sheet');
   });
 });

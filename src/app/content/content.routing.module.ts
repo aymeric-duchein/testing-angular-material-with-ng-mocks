@@ -9,7 +9,9 @@ export interface Content {
 
 export enum RouteNames {
   Home = 'home',
-  Button = 'button',
+  BottomSheet = 'bottomSheet',
+  BottomSheetBase = 'base',
+  BottomSheetData = 'data',
   List = 'list',
   ListAction = 'action',
   ListBase = 'base',
@@ -24,8 +26,17 @@ export const CONTENT_LIST: Content[] = [
     title: 'Home',
     route: RouteNames.Home,
   }, {
-    title: 'Button',
-    route: RouteNames.Button,
+    title: 'Bottom Sheet',
+    route: RouteNames.BottomSheet,
+    children: [
+      {
+        title: 'Base Bottom Sheet',
+        route: RouteNames.BottomSheetBase,
+      }, {
+        title: 'With data',
+        route: RouteNames.BottomSheetData,
+      },
+    ]
   }, {
     title: 'List',
     route: RouteNames.List,
@@ -58,9 +69,8 @@ const ROUTES = [
     path: RouteNames.Home,
     loadChildren: () => import(`./home/home.module`).then(m => m.HomeModule),
   }, {
-    path: RouteNames.Button,
-    loadChildren: () => import(`./button/button.module`).then(m => m.ButtonModule),
-
+    path: RouteNames.BottomSheet,
+    loadChildren: () => import(`./bottom-sheet/bottom-sheet.module`).then(m => m.BottomSheetModule),
   }, {
     path: RouteNames.List,
     loadChildren: () => import(`./list/list.module`).then(m => m.ListModule)
