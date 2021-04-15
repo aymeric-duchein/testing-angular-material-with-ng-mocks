@@ -12,10 +12,12 @@ describe('ActionListComponent', () => {
     save: jasmine.createSpy(),
     undo: jasmine.createSpy(),
   };
+
   beforeEach(() =>
     MockBuilder(ActionListComponent, ActionListModule)
-      .mock(ActionListService, mockActionListService)
+    .mock(ActionListService, mockActionListService)
   );
+
   beforeEach(() => {
     fixture = MockRender(ActionListComponent);
     component = fixture.point.componentInstance;

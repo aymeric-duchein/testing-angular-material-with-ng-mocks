@@ -11,6 +11,8 @@ export class AppComponent {
   opened = true;
   links = CONTENT_LIST;
 
+  constructor() {}
+
   headerBtnClicked(): void {
     this.opened = !this.opened;
   }

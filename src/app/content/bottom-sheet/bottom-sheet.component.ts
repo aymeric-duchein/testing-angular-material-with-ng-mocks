@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-button',
   templateUrl: './bottom-sheet.component.html',
-  styleUrls: ['./bottom-sheet.component.scss']
+  styleUrls: [ './bottom-sheet.component.scss' ]
 })
-export class BottomSheetComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class BottomSheetComponent {
 }

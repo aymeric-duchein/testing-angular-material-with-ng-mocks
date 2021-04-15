@@ -15,10 +15,12 @@ mat-nav-list {
 
 .current-category {
   background: rgba(255,255,255,.04);
+  & > span::ng-deep {
+    color: #69f0ae;
+  }
   color: #69f0ae;
 }
 
 .sub-item {
-  margin-left: 12px;
-  font-size: 12px;
+  font-size: 14px;
 }

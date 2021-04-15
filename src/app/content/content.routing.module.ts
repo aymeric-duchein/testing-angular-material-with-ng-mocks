@@ -9,6 +9,7 @@ export interface Content {
 
 export enum RouteNames {
   Home = 'home',
+  Autocomplete = 'autocomplete',
   BottomSheet = 'bottomSheet',
   BottomSheetBase = 'base',
   BottomSheetData = 'data',
@@ -18,13 +19,15 @@ export enum RouteNames {
   ListMultiSelect = 'multiSelect',
   ListNav = 'nav',
   ListSelect = 'select',
-  Checkbox = 'checkbox',
 }
 
 export const CONTENT_LIST: Content[] = [
   {
     title: 'Home',
     route: RouteNames.Home,
+  }, {
+    title: 'Autocomplete',
+    route: RouteNames.Autocomplete,
   }, {
     title: 'Bottom Sheet',
     route: RouteNames.BottomSheet,
@@ -58,9 +61,6 @@ export const CONTENT_LIST: Content[] = [
         route: RouteNames.ListMultiSelect,
       }
     ],
-  }, {
-    title: 'Checkbox',
-    route: RouteNames.Checkbox,
   },
 ];
 
@@ -75,8 +75,8 @@ const ROUTES = [
     path: RouteNames.List,
     loadChildren: () => import(`./list/list.module`).then(m => m.ListModule)
   }, {
-    path: RouteNames.Checkbox,
-    loadChildren: () => import(`./checkbox/checkbox.module`).then(m => m.CheckboxModule)
+    path: RouteNames.Autocomplete,
+    loadChildren: () => import(`./autocomplete/autocomplete.module`).then(m => m.AutocompleteModule)
   },
 ];
 

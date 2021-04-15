@@ -140,6 +140,7 @@
       true,
       "attribute",
       "app",
+      "is",
       "camelCase"
     ],
     "component-selector": [

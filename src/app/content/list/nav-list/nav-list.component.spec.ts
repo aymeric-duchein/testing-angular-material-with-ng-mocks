@@ -19,7 +19,7 @@ describe('NavListComponent', () => {
 
   beforeEach(() =>
     MockBuilder(NavListComponent, NavListModule)
-    .provide({ provide: NavListInfoService, useValue: navListInfoService })
+    .mock(NavListInfoService, navListInfoService)
   );
   beforeEach(() => {
     fixture = MockRender(NavListComponent, { links: mockLinks });

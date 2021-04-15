@@ -8,11 +8,19 @@
 <mat-drawer-container>
   <mat-drawer mode="side" [opened]="opened">
     <mat-nav-list>
-      <ng-container  *ngFor="let link of links">
-        <a mat-list-item routerLinkActive="current-category" [routerLink]="link.route">{{ link.title }}</a>
-        <a mat-list-item class="sub-item" routerLinkActive="current-item" *ngFor="let sublink of link.children" [routerLink]="[ link.route, sublink.route]">
-          • {{ sublink.title }}
-        </a>
+      <ng-container *ngFor="let link of links">
+        <mat-expansion-panel class="mat-elevation-z" *ngIf="link.children && link.children.length; else simpleLink">
+          <mat-expansion-panel-header isRouteActive="current-category" [route]="link.route">
+            {{ link.title }}
+          </mat-expansion-panel-header>
+          <a mat-list-item class="sub-item" routerLinkActive="current-item" *ngFor="let sublink of link.children" [routerLink]="[ link.route, sublink.route]">
+            • {{ sublink.title }}
+          </a>
+        </mat-expansion-panel>
+
+        <ng-template #simpleLink>
+          <a mat-list-item routerLinkActive="current-category" [routerLink]="link.route">{{ link.title }}</a>
+        </ng-template>
       </ng-container>
     </mat-nav-list>
   </mat-drawer>
@@ -20,3 +28,13 @@
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
+
+
+<ng-template>
+  <ng-container  *ngFor="let link of links">
+    <a mat-list-item routerLinkActive="current-category" [routerLink]="link.route">{{ link.title }}</a>
+    <a mat-list-item class="sub-item" routerLinkActive="current-item" *ngFor="let sublink of link.children" [routerLink]="[ link.route, sublink.route]">
+      • {{ sublink.title }}
+    </a>
+  </ng-container>
+</ng-template>

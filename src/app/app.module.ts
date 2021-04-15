@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { FileReaderModule } from './shared/file-reader/file-reader.module';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { IsRouteActiveModule } from './shared/is-route-active/is-route-active.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     RouterModule,
     ContentRoutingModule,
     FileReaderModule,
+    IsRouteActiveModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
