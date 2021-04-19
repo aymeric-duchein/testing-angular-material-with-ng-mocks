@@ -116,7 +116,7 @@ class ContentRoutingModule {
 ContentRoutingModule.ɵfac = function ContentRoutingModule_Factory(t) { return new (t || ContentRoutingModule)(); };
 ContentRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: ContentRoutingModule });
 ContentRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ providers: [], imports: [[
-            _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(ROUTES),
+            _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forChild(ROUTES),
         ], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](ContentRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
 
@@ -411,6 +411,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 class AppModule {
 }
 AppModule.ɵfac = function AppModule_Factory(t) { return new (t || AppModule)(); };
@@ -420,7 +421,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjecto
             ngx_markdown__WEBPACK_IMPORTED_MODULE_11__["MarkdownModule"].forRoot({ loader: _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClient"] }),
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot([], { useHash: true }),
             _content_content_routing_module__WEBPACK_IMPORTED_MODULE_7__["ContentRoutingModule"],
             _shared_file_reader_file_reader_module__WEBPACK_IMPORTED_MODULE_10__["FileReaderModule"],
             _shared_is_route_active_is_route_active_module__WEBPACK_IMPORTED_MODULE_14__["IsRouteActiveModule"],
@@ -432,9 +433,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵdefineInjecto
             _angular_material_expansion__WEBPACK_IMPORTED_MODULE_13__["MatExpansionModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_15__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__["AppComponent"]], imports: [_angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], ngx_markdown__WEBPACK_IMPORTED_MODULE_11__["MarkdownModule"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"],
-        _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"],
-        _content_content_routing_module__WEBPACK_IMPORTED_MODULE_7__["ContentRoutingModule"],
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_2__["BrowserAnimationsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"], _content_content_routing_module__WEBPACK_IMPORTED_MODULE_7__["ContentRoutingModule"],
         _shared_file_reader_file_reader_module__WEBPACK_IMPORTED_MODULE_10__["FileReaderModule"],
         _shared_is_route_active_is_route_active_module__WEBPACK_IMPORTED_MODULE_14__["IsRouteActiveModule"],
         _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
