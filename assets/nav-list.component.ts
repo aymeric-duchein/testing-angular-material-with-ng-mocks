@@ -11,9 +11,9 @@ export class NavListComponent {
   info = '';
 
   @Input() links: { content: string; href: string }[] = [
-    { content: 'Link 1', href: '/list/nav' },
-    { content: 'Link 2', href: '/list/nav' },
-    { content: 'Link 3', href: '/list/nav' },
+    { content: 'Link 1', href: 'javascript:' },
+    { content: 'Link 2', href: 'javascript:' },
+    { content: 'Link 3', href: 'javascript:' },
   ];
 
   constructor(private navListInfoService: NavListInfoService) {}
