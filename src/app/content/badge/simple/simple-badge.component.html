@@ -1,0 +1,43 @@
+<p>
+  <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+</p>
+
+<p>
+  <span matBadge="1" matBadgeSize="large">Text with large badge</span>
+</p>
+
+<p>
+  Button with a badge on the left
+  <button mat-raised-button color="primary"
+          matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+    Action
+  </button>
+</p>
+
+<p>
+  Button toggles badge visibility
+  <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+    Hide
+  </button>
+</p>
+
+<p>
+  Icon with a badge
+  <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+</p>
+
+<p>
+  <button mat-button
+          id="overlapping"
+          matBadge="O"
+          [matBadgeOverlap]="overlap"
+          (click)="toggleBadgeOverlap()">Overlapping</button>
+</p>
+<p>
+  <button
+    mat-button
+    id="disabled"
+    matBadge="D"
+    [matBadgeDisabled]="disabled"
+    (click)="toggleBadgeDisabled()">Disabled</button>
+</p>

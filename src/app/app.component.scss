@@ -13,6 +13,9 @@ mat-nav-list {
   color: #69f0ae;
 }
 
+a[mat-list-item]:not(.sub-item) {
+  padding-left: 8px;
+}
 .current-category {
   background: rgba(255,255,255,.04);
   & > span::ng-deep {

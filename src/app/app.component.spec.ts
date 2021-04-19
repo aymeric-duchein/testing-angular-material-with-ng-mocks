@@ -43,7 +43,7 @@ describe('AppComponent', () => {
 
   it('should display simple category links', () => {
     const links = ngMocks.findAll('a:not(.sub-item)');
-    expect(links.length).toEqual(1);
+    expect(links.length).toEqual(3);
     expect(ngMocks.input(links[0], 'routerLink')).toEqual(CONTENT_LIST[0].route);
     expect(ngMocks.formatText(links[0])).toContain(CONTENT_LIST[0].title);
   });

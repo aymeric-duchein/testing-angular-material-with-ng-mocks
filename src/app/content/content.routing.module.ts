@@ -12,9 +12,11 @@ export enum RouteNames {
   Autocomplete = 'autocomplete',
   AutocompleteSimple = 'simple',
   AutocompleteAdvanced = 'advanced',
+  Badge = 'badge',
   BottomSheet = 'bottomSheet',
   BottomSheetBase = 'base',
   BottomSheetData = 'data',
+  Button = 'button',
   List = 'list',
   ListAction = 'action',
   ListBase = 'base',
@@ -27,7 +29,8 @@ export const CONTENT_LIST: Content[] = [
   {
     title: 'Home',
     route: RouteNames.Home,
-  }, {
+  },
+  {
     title: 'Autocomplete',
     route: RouteNames.Autocomplete,
     children: [
@@ -39,7 +42,13 @@ export const CONTENT_LIST: Content[] = [
         route: RouteNames.AutocompleteAdvanced,
       },
     ]
-  }, {
+  },
+  {
+    title: 'Badge',
+    route: RouteNames.Badge,
+    children: []
+  },
+  {
     title: 'Bottom Sheet',
     route: RouteNames.BottomSheet,
     children: [
@@ -51,7 +60,13 @@ export const CONTENT_LIST: Content[] = [
         route: RouteNames.BottomSheetData,
       },
     ]
-  }, {
+  },
+  {
+    title: 'Button',
+    route: RouteNames.Button,
+    children: []
+  },
+  {
     title: 'List',
     route: RouteNames.List,
     children: [
@@ -79,15 +94,26 @@ const ROUTES = [
   {
     path: RouteNames.Home,
     loadChildren: () => import(`./home/home.module`).then(m => m.HomeModule),
-  }, {
-    path: RouteNames.BottomSheet,
-    loadChildren: () => import(`./bottom-sheet/bottom-sheet.module`).then(m => m.BottomSheetModule),
-  }, {
-    path: RouteNames.List,
-    loadChildren: () => import(`./list/list.module`).then(m => m.ListModule)
-  }, {
+  },
+  {
     path: RouteNames.Autocomplete,
     loadChildren: () => import(`./autocomplete/autocomplete.module`).then(m => m.AutocompleteModule)
+  },
+  {
+    path: RouteNames.Badge,
+    loadChildren: () => import(`./badge/badge.module`).then(m => m.BadgeModule)
+  },
+  {
+    path: RouteNames.BottomSheet,
+    loadChildren: () => import(`./bottom-sheet/bottom-sheet.module`).then(m => m.BottomSheetModule),
+  },
+  {
+    path: RouteNames.Button,
+    loadChildren: () => import(`./button/button.module`).then(m => m.ButtonModule)
+  },
+  {
+    path: RouteNames.List,
+    loadChildren: () => import(`./list/list.module`).then(m => m.ListModule)
   },
 ];
 
