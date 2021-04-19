@@ -33,6 +33,8 @@ var RouteNames;
 (function (RouteNames) {
     RouteNames["Home"] = "home";
     RouteNames["Autocomplete"] = "autocomplete";
+    RouteNames["AutocompleteSimple"] = "simple";
+    RouteNames["AutocompleteAdvanced"] = "advanced";
     RouteNames["BottomSheet"] = "bottomSheet";
     RouteNames["BottomSheetBase"] = "base";
     RouteNames["BottomSheetData"] = "data";
@@ -50,6 +52,15 @@ const CONTENT_LIST = [
     }, {
         title: 'Autocomplete',
         route: RouteNames.Autocomplete,
+        children: [
+            {
+                title: 'Simple',
+                route: RouteNames.AutocompleteSimple,
+            }, {
+                title: 'Advanced',
+                route: RouteNames.AutocompleteAdvanced,
+            },
+        ]
     }, {
         title: 'Bottom Sheet',
         route: RouteNames.BottomSheet,
@@ -94,7 +105,7 @@ const ROUTES = [
         loadChildren: () => __webpack_require__.e(/*! import() | bottom-sheet-bottom-sheet-module */ "bottom-sheet-bottom-sheet-module").then(__webpack_require__.bind(null, /*! ./bottom-sheet/bottom-sheet.module */ "hgSV")).then(m => m.BottomSheetModule),
     }, {
         path: RouteNames.List,
-        loadChildren: () => Promise.all(/*! import() | list-list-module */[__webpack_require__.e("default~base-base-bottom-sheet-module~data-data-bottom-sheet-module~list-list-module~simple-simple-a~c775bbb3"), __webpack_require__.e("list-list-module")]).then(__webpack_require__.bind(null, /*! ./list/list.module */ "7P8+")).then(m => m.ListModule)
+        loadChildren: () => Promise.all(/*! import() | list-list-module */[__webpack_require__.e("default~advanced-advanced-autocomplete-module~base-base-bottom-sheet-module~data-data-bottom-sheet-m~13050dc4"), __webpack_require__.e("list-list-module")]).then(__webpack_require__.bind(null, /*! ./list/list.module */ "7P8+")).then(m => m.ListModule)
     }, {
         path: RouteNames.Autocomplete,
         loadChildren: () => __webpack_require__.e(/*! import() | autocomplete-autocomplete-module */ "autocomplete-autocomplete-module").then(__webpack_require__.bind(null, /*! ./autocomplete/autocomplete.module */ "gmVL")).then(m => m.AutocompleteModule)
