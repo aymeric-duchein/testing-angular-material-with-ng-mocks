@@ -47,3 +47,4 @@ Thumbs.db
 
 /src/assets/*.html
 /src/assets/*.ts
+/src/assets/*.scss
