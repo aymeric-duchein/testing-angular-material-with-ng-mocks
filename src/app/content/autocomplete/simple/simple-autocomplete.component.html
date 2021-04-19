@@ -15,4 +15,9 @@
   </mat-form-field>
 </form>
 
+<mat-slide-toggle (toggleChange)="toggleDisabled()">
+  Disable autocomplete
+</mat-slide-toggle>
+
+
 <p> Selected option: {{ myControl.value }}</p>

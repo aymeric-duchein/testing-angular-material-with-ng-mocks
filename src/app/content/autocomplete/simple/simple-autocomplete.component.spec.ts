@@ -56,4 +56,25 @@ describe('SimpleAutocompleteComponent', () => {
     const selectedOption = ngMocks.find('p');
     expect(ngMocks.formatText(selectedOption)).toEqual('Selected option: Two');
   });
+
+  it('should disable the form', () => {
+    const toggle = ngMocks.find('mat-slide-toggle');
+    ngMocks.trigger(toggle, 'toggleChange');
+
+    fixture.detectChanges();
+    const input = ngMocks.find('input');
+    expect(ngMocks.input(input, 'formControl').disabled).toBeTrue();
+  });
+
+  it('should enable the form', () => {
+    const toggle = ngMocks.find('mat-slide-toggle');
+    ngMocks.trigger(toggle, 'toggleChange');
+    fixture.detectChanges();
+
+    ngMocks.trigger(toggle, 'toggleChange');
+    fixture.detectChanges();
+
+    const input = ngMocks.find('input');
+    expect(ngMocks.input(input, 'formControl').disabled).toBeFalse();
+  });
 });

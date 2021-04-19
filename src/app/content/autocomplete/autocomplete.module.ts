@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '', component: AutocompleteComponent, children: [
       { path: 'simple', loadChildren: () => import(`./simple/simple-autocomplete.module`).then(m => m.SimpleAutocompleteModule) },
+      {
+        path: 'advanced',
+        loadChildren: () => import(`./advanced/advanced-autocomplete.module`).then(m => m.AdvancedAutocompleteModule)
+      },
       { path: '', redirectTo: 'simple', pathMatch: 'full' },
       { path: '**', redirectTo: 'simple' },
     ]

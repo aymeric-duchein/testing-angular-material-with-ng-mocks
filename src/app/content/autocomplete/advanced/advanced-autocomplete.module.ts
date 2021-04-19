@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SimpleAutocompleteComponent } from './simple-autocomplete.component';
+import { AdvancedAutocompleteComponent } from './advanced-autocomplete.component';
 import { ContainerComponent } from './container/container.component';
 import { ItemTemplateModule } from '../../../shared/item-template/item-template.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -20,7 +20,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    SimpleAutocompleteComponent,
+    AdvancedAutocompleteComponent,
     ContainerComponent
   ],
   imports: [
@@ -38,4 +38,4 @@ const routes: Routes = [
     MatSlideToggleModule
   ]
 })
-export class SimpleAutocompleteModule { }
+export class AdvancedAutocompleteModule { }

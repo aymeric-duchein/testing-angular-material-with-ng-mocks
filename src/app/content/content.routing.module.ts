@@ -10,6 +10,8 @@ export interface Content {
 export enum RouteNames {
   Home = 'home',
   Autocomplete = 'autocomplete',
+  AutocompleteSimple = 'simple',
+  AutocompleteAdvanced = 'advanced',
   BottomSheet = 'bottomSheet',
   BottomSheetBase = 'base',
   BottomSheetData = 'data',
@@ -28,6 +30,15 @@ export const CONTENT_LIST: Content[] = [
   }, {
     title: 'Autocomplete',
     route: RouteNames.Autocomplete,
+    children: [
+      {
+        title: 'Simple',
+        route: RouteNames.AutocompleteSimple,
+      }, {
+        title: 'Advanced',
+        route: RouteNames.AutocompleteAdvanced,
+      },
+    ]
   }, {
     title: 'Bottom Sheet',
     route: RouteNames.BottomSheet,
