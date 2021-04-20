@@ -43,14 +43,8 @@ describe('SimpleAutocompleteComponent', () => {
   });
 
   it('should update formValue', () => {
-    const trigger = ngMocks.findInstance(
-      MatAutocompleteTrigger
-    );
-
-    if (isMockControlValueAccessor(trigger)) {
-      trigger.__simulateChange('Two');
-    }
-
+    const trigger = ngMocks.find(MatAutocompleteTrigger);
+    ngMocks.change(trigger, 'Two');
     fixture.detectChanges();
 
     const selectedOption = ngMocks.find('p');
