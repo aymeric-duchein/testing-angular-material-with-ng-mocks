@@ -9,8 +9,7 @@
     "copy-watch": "onchange -v src/app/content/**/*.component.* -- npm run copy",
     "build": "npm run copy && ng build --prod --base-href /testing-angular-material-with-ng-mocks/ && cp-cli dist/material-testing/index.html dist/material-testing/404.html",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

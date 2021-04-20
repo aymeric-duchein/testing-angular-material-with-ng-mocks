@@ -43,14 +43,14 @@ describe('AppComponent', () => {
 
   it('should display simple category links', () => {
     const links = ngMocks.findAll('a:not(.sub-item)');
-    expect(links.length).toEqual(3);
+    expect(links.length).toEqual(4);
     expect(ngMocks.input(links[0], 'routerLink')).toEqual(CONTENT_LIST[0].route);
     expect(ngMocks.formatText(links[0])).toContain(CONTENT_LIST[0].title);
   });
 
   it('should display complexe category links', () => {
     const links = ngMocks.findAll('mat-expansion-panel');
-    expect(links.length).toEqual(3);
+    expect(links.length).toEqual(4);
     const isRouteActive = ngMocks.findInstance(IsRouteActiveDirective);
     expect(isRouteActive.isRouteActive).toEqual('current-category');
     expect(isRouteActive.route).toEqual(CONTENT_LIST[1].route);
@@ -59,7 +59,7 @@ describe('AppComponent', () => {
 
   it('should display sub-categories links', () => {
     const links = ngMocks.findAll('a.sub-item');
-    expect(links.length).toEqual(9);
+    expect(links.length).toEqual(13);
     expect(ngMocks.input(links[0], 'routerLink')).toEqual([ RouteNames.Autocomplete, RouteNames.AutocompleteSimple ]);
     expect(ngMocks.formatText(links[0])).toContain('Simple');
   });

@@ -13,10 +13,16 @@ export enum RouteNames {
   AutocompleteSimple = 'simple',
   AutocompleteAdvanced = 'advanced',
   Badge = 'badge',
-  BottomSheet = 'bottomSheet',
+  BottomSheet = 'bottom-sheet',
   BottomSheetBase = 'base',
   BottomSheetData = 'data',
   Button = 'button',
+  ButtonToggle = 'button-toggle',
+  ButtonToggleSimple = 'simple',
+  ButtonToggleNgModel = 'ngmodel',
+  ButtonToggleForm = 'form',
+  ButtonToggleMultiple = 'multiple',
+  Card = 'card',
   List = 'list',
   ListAction = 'action',
   ListBase = 'base',
@@ -66,6 +72,33 @@ export const CONTENT_LIST: Content[] = [
     route: RouteNames.Button,
     children: []
   },
+   {
+    title: 'Button Toggle',
+    route: RouteNames.ButtonToggle,
+    children: [
+      {
+        title: 'Basic',
+        route: RouteNames.ButtonToggleSimple,
+      },
+      {
+        title: 'Form',
+        route: RouteNames.ButtonToggleForm,
+      },
+      {
+        title: 'NgModel',
+        route: RouteNames.ButtonToggleNgModel,
+      },
+      {
+        title: 'Multiple',
+        route: RouteNames.ButtonToggleMultiple,
+      },
+    ]
+  },
+  {
+    title: 'Card',
+    route: RouteNames.Card,
+    children: []
+  },
   {
     title: 'List',
     route: RouteNames.List,
@@ -110,6 +143,14 @@ const ROUTES = [
   {
     path: RouteNames.Button,
     loadChildren: () => import(`./button/button.module`).then(m => m.ButtonModule)
+  },
+  {
+    path: RouteNames.ButtonToggle,
+    loadChildren: () => import(`./button-toggle/button-toggle.module`).then(m => m.ButtonToggleModule)
+  },
+  {
+    path: RouteNames.Card,
+    loadChildren: () => import(`./card/card.module`).then(m => m.CardModule)
   },
   {
     path: RouteNames.List,

@@ -42,14 +42,8 @@ describe('ControlsAutocompleteComponent', () => {
   });
 
   it('should update formValue with manual value', () => {
-    const trigger = ngMocks.findInstance(
-      MatAutocompleteTrigger
-    );
-
-    if (isMockControlValueAccessor(trigger)) {
-      trigger.__simulateChange('Two');
-    }
-
+    const trigger = ngMocks.find(MatAutocompleteTrigger);
+    ngMocks.change(trigger, 'Two');
     fixture.detectChanges();
 
     const selectedOption = ngMocks.find('p');
@@ -57,14 +51,8 @@ describe('ControlsAutocompleteComponent', () => {
   });
 
   it('should update formValue with object', () => {
-    const trigger = ngMocks.findInstance(
-      MatAutocompleteTrigger
-    );
-
-    if (isMockControlValueAccessor(trigger)) {
-      trigger.__simulateChange({ name: 'Bob'});
-    }
-
+    const trigger = ngMocks.find(MatAutocompleteTrigger);
+    ngMocks.change(trigger, { name: 'Bob' });
     fixture.detectChanges();
 
     const selectedOption = ngMocks.find('p');
@@ -72,13 +60,8 @@ describe('ControlsAutocompleteComponent', () => {
   });
 
   it('should filter options', () => {
-    const trigger = ngMocks.findInstance(
-      MatAutocompleteTrigger
-    );
-
-    if (isMockControlValueAccessor(trigger)) {
-      trigger.__simulateChange('Ma');
-    }
+    const trigger = ngMocks.find(MatAutocompleteTrigger);
+    ngMocks.change(trigger, 'Ma');
     fixture.detectChanges();
 
     const options = ngMocks.findAll(MatOption);
