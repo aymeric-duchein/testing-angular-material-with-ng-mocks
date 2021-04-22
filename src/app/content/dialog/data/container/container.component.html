@@ -1,0 +1,22 @@
+<h4>Dialog with data</h4>
+<p>Test the dialog and the parent component separately</p>
+
+<mat-card>
+  <mat-card-content>
+    <app-item-template htmlFile="data-dialog.component.html"
+                   tsFile="data-dialog.component.ts"
+                   specFile="data-dialog.component.spec.ts">
+      <app-data-dialog></app-data-dialog>
+    </app-item-template>
+  </mat-card-content>
+</mat-card>
+<mat-divider></mat-divider>
+<mat-card>
+  <mat-card-content>
+    <app-item-template htmlFile="data-example-dialog.component.html"
+                       tsFile="data-example-dialog.component.ts"
+                       specFile="data-example-dialog.component.spec.ts">
+       Navigate to other tabs to see dialog implementation
+    </app-item-template>
+  </mat-card-content>
+</mat-card>

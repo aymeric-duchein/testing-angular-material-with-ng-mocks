@@ -23,6 +23,15 @@ export enum RouteNames {
   ButtonToggleForm = 'form',
   ButtonToggleMultiple = 'multiple',
   Card = 'card',
+  Dialog = 'dialog',
+  DialogBase = 'base',
+  DialogData = 'data',
+  DialogTemplate = 'template',
+  Divider = 'divider',
+  GridList = 'grid-list',
+  Icon = 'icon',
+  IconBase = 'simple',
+  IconRegistry = 'registry',
   List = 'list',
   ListAction = 'action',
   ListBase = 'base',
@@ -100,6 +109,45 @@ export const CONTENT_LIST: Content[] = [
     children: []
   },
   {
+    title: 'Dialog',
+    route: RouteNames.Dialog,
+    children: [
+      {
+        title: 'Base Dialog',
+        route: RouteNames.DialogBase,
+      }, {
+        title: 'With data',
+        route: RouteNames.DialogData,
+      }, {
+        title: 'Dialog Template',
+        route: RouteNames.DialogTemplate,
+      },
+    ]
+  },
+  {
+    title: 'Divider',
+    route: RouteNames.Divider,
+    children: []
+  },
+  {
+    title: 'Grid List',
+    route: RouteNames.GridList,
+    children: []
+  },
+  {
+    title: 'Icon',
+    route: RouteNames.Icon,
+    children: [
+      {
+        title: 'Base Icon',
+        route: RouteNames.IconBase,
+      }, {
+        title: 'SVG Icon',
+        route: RouteNames.IconRegistry,
+      },
+    ]
+  },
+  {
     title: 'List',
     route: RouteNames.List,
     children: [
@@ -151,6 +199,22 @@ const ROUTES = [
   {
     path: RouteNames.Card,
     loadChildren: () => import(`./card/card.module`).then(m => m.CardModule)
+  },
+  {
+    path: RouteNames.Dialog,
+    loadChildren: () => import(`./dialog/dialog.module`).then(m => m.DialogModule)
+  },
+  {
+    path: RouteNames.Divider,
+    loadChildren: () => import(`./divider/divider.module`).then(m => m.DividerModule)
+  },
+  {
+    path: RouteNames.GridList,
+    loadChildren: () => import(`./grid-list/grid-list.module`).then(m => m.GridListModule)
+  },
+  {
+    path: RouteNames.Icon,
+    loadChildren: () => import(`./icon/icon.module`).then(m => m.IconModule)
   },
   {
     path: RouteNames.List,
